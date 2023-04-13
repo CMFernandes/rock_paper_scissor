@@ -1,15 +1,9 @@
  
 const possibleHands = ["rock","paper","scissor"]
 
-/*
-    Function making the random selection between rock, paper or scissor.
-    @return a random string from possibleHands array. 
-*/
+
 function getComputerChoice() {
-    /*
-        indexOfPossibleHands will hold the value of the Math.random() function.
-        It's value will be used as an index for the possibleHands array.
-    */
+    
     const indexOfPossibleHands = Math.floor(Math.random() * possibleHands.length);
     return possibleHands[indexOfPossibleHands];
 }
@@ -22,7 +16,6 @@ function game(){
     let computerSelection;
     let result;
 
-    
 
     for (let i = 1 ; i <= 5; i++){
         playerSelection = prompt().toLowerCase();
