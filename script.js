@@ -1,90 +1,115 @@
- 
-const possibleHands = ["rock","paper","scissor"]
-
-
-function getComputerChoice() {
-    
-    const indexOfPossibleHands = Math.floor(Math.random() * possibleHands.length);
-    return possibleHands[indexOfPossibleHands];
-}
-
-let playerScore = 0;
-let computerScore = 0;
-
 function game(){
-    let playerSelection;
-    let computerSelection;
-    let result;
+
+    const possibleHands = ["rock","paper","scissor"]
+    const roundResultElement = document.getElementById("round-result");
+    const finalResultElement = document.getElementById("final-result");
+    const playAgainButton = document.querySelector(".play-again");
+    const playerScoreElement = document.getElementById("player-score");
+    const computerScoreElement =  document.getElementById("computer-score");
+
+    function getComputerChoice() {
+        const indexOfPossibleHands = Math.floor(Math.random() * possibleHands.length);
+        return possibleHands[indexOfPossibleHands];
+    }
+
+    let playerScore = 0;
+    let computerScore = 0; 
+    const rounds = 5;
+    let roundCount =0;
+
+    const rock = document.getElementById("rock");
+    const paper = document.getElementById("paper");
+    const scissor = document.getElementById("scissor");
+   
+   
+    
+    rock.addEventListener("click", () => {
+        if(roundCount < rounds){
+        const playerSelection = "rock";
+        const computerChoice = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerChoice);
+        evaluateRound(roundResult)
+        roundCount++;
+
+        }
+      });
+
+      paper.addEventListener("click", () => {
+        if(roundCount < rounds){
+        const playerSelection = "paper";
+        const computerChoice = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerChoice);
+        evaluateRound(roundResult)
+        roundCount++;
+
+        }
+        
+      });
+
+      scissor.addEventListener("click", () => {
+        if(roundCount < rounds){
+        const playerSelection = "scissor";
+        const computerChoice = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerChoice);
+        evaluateRound(roundResult);
+        roundCount++;
+        }
+      });
 
 
-    for (let i = 1 ; i <= 5; i++){
-        playerSelection = prompt().toLowerCase();
 
-        while(!validateHand(playerSelection)) {
-            alert("Not a valid hand!");
-            playerSelection = prompt().toLowerCase();
+    function evaluateResult(playerScore, computerScore){
+
+        if(playerScore > computerScore) {
+            return "You Win!";
+        } else if(playerScore < computerScore){
+            return "You Lost!";
+        } else {
+            return "It's a tie!";
+        }
+        
+    }
+
+    function evaluateRound(roundResult){
+
+        if(roundResult == 0) {
+            roundResultElement.textContent ="It's a tie!";
+        } else if(roundResult == 1) {
+            playerScore++
+            roundResultElement.textContent ="Round win!";
+                  
+        } else {
+            computerScore++;
+            roundResultElement.textContent ="Round lost!";
+        }
+        playerScoreElement.textContent = `Player score:`+ `${playerScore}`;
+        computerScoreElement.textContent = `Computer score:`+ `${computerScore}`;
+        
+        if (roundCount === 4) {
+            const finalResult = evaluateResult(playerScore, computerScore);
+            finalResultElement.textContent = finalResult;
         }
 
-        computerSelection = getComputerChoice();
+    }
 
-        console.log(`Your hand: ${playerSelection}`);
-        console.log(`Computer hand: ${computerSelection}`);
+    function playRound(playerSelection,computerChoice){
         
+        if (playerSelection == computerChoice){
+            return 0;
 
-        result = playRound(playerSelection, computerSelection);
-
-        evaluateRound(result);  
-    }
-    console.log(`Your score: ${playerScore}.`)
-    console.log(`Computer ${computerScore}.`)
-    return evaluateResult(playerScore, computerScore);
-
-}
-
-function validateHand(playerSelection){
-    if (playerSelection == "rock" || 
-        playerSelection == "paper" || 
-        playerSelection == "scissor" ){
-        return true
-    }else {
-        return false
-    }
-}
-
-function evaluateResult(playerScore, computerScore){
-    if(playerScore > computerScore) {
-        return "You Win!";
-    } else if(playerScore < computerScore){
-        return "You Lost!";
-    } else {
-        return "It's a tie!";
-    }
-}
-
-function evaluateRound(result){
-    if(result == 0) {
-        console.log("It's a tie!");
-    } else if(result == 1) {
-        console.log("Round win!");
-        playerScore++;        
-    } else {
-        console.log("Round lost!");
-        computerScore++;
+        }else if ((playerSelection== "paper" && computerChoice == "rock")  ||
+            (playerSelection== "rock" && computerChoice == "scissors") ||
+            (playerSelection == "scissor" && computerChoice == "paper")) {
+            return 1;
+            
+        }else{
+            return -1;
+            
+        }
+        
     }
 
 }
-function playRound(playerSelection,computerSelection){
-    if (playerSelection == computerSelection){
-        return 0;
-    }else if ((playerSelection == "paper" && computerSelection == "rock")  ||
-        (playerSelection == "rock" && computerSelection == "scissors") ||
-        (playerSelection == "scissors" && computerSelection == "paper")) {
-        return 1;
-    }else{
-        return -1;
-    }
+    
+game()
 
-
-}
-
-console.log(game());
