@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissor">Scissor</button>
-    </div>
+    <div class="content">
+        <div id="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissor">Scissor</button>
+        </div>
 
-    <div id="result">
-        <ul>
-            <li id="player-score">Player score:</li>
-            <li id="computer-score">Computer-score:</li>
-            <li id="round-result">Result:</li>
-            <li id="final-result"></li>
-        </ul>
-    </div>
+        <div class="game-state">
+            <div id="player-score">Player score:</div>
+            <div id="computer-score">Computer-score:</div>
 
+        </div>
+        <div id="result">
+            <div id="round-result">Result:</div>
+            <div id="final-result"></div>
+        </div>
+    </div>
     <script src="/script.js"></script>
 </body>
 </html>
