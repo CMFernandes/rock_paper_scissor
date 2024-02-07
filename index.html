@@ -9,21 +9,41 @@
 </head>
 <body>
     <div class="content">
+        <div>
+            <h1>Rock Paper Scissors</h1>
+        </div>
         <div id="buttons">
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissor">Scissor</button>
         </div>
 
-        <div class="game-state">
-            <div id="player-score">Player score:</div>
-            <div id="computer-score">Computer-score:</div>
+        <div class="display-hands">
+            <div>Player 
+                <p id="player-hand"></p>
+            </div>
+            <div>Computer
+                <p id="computer-hand"></p>
+            </div>
+        </div>
 
+        <div class="game-state">
+            <div>Player score
+                <div id="player-score"></div>
+            </div>
+            <div>Computer score
+                <div id="computer-score"></div>
+            </div>
         </div>
+
         <div id="result">
-            <div id="round-result">Result:</div>
-            <div id="final-result"></div>
+            <div id="round-result"></div>
+            <div>
+                <p id="final-result"></p>
+                <button id="play-again" class="hide">Play Again</button>
+            </div>
         </div>
+
     </div>
     <script src="/script.js"></script>
 </body>
