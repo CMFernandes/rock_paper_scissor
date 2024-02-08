@@ -16,9 +16,9 @@ This project is a classic game of rock, paper, scissors, where the player compet
 Was build with HTML, CSS and vanilla Javacript.
 
 The main purpose of this project was to practice:
--functions
--condicionals
--DOM manipulation
--event listeners
+- functions
+- condicionals
+- DOM manipulation
+- event listeners
 
 Assigment from [The Odin Project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) Foundations course. 
