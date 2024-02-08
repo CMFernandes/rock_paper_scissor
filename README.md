@@ -1,4 +1,4 @@
-# rock_paper_scissor
+# rock paper scissors
 
 
 ![](rock-paper-scissors-screenshot.png "")
