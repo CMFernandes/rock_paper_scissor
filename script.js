@@ -60,7 +60,7 @@ function game(){
     function evaluateResult(playerScore, computerScore){
         playAgainBtn.classList.toggle("hide");
         if(playerScore > computerScore) {
-            return "You Win!";
+            return "You Won!";
         } else if(playerScore < computerScore){
             return "You Lost!";
         } else {
@@ -73,7 +73,7 @@ function game(){
             roundResultElement.textContent ="It's a tie!";
         } else if(roundResult == 1) {
             playerScore++
-            roundResultElement.textContent ="Round win!";
+            roundResultElement.textContent ="Round won!";
                   
         } else {
             computerScore++;
