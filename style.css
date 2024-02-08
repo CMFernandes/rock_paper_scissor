@@ -1,1 +1,103 @@
+.content{
+    max-width: 1280px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    color: rgb(51, 51, 51); 
+}
+
+.hide{
+    display: none;
+}
+
+
+.display-hands,.game-state{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    height: 100px;
+    margin-top: 40px;
+}
+
+.display-hands div {
+    text-align: center;
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    width: 100px;
+    padding: 10px 20px;
+    font-size: 24px;
+}
+
+
+.display-hands div p {
+    font-size: 24px;
+}
+
+.game-state div{
+    padding: 15px 20px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin:20px;
+}
+
+#buttons button,#play-again {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(16, 125, 158);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+}
+
+#buttons button:hover,
+#play-again:hover {
+    background-color: rgb(3, 59, 85); 
+}
+
+.game-state {
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-state div {
+    text-align: center;
+    
+}
+
+#result {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+#round-result{
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(51, 51, 51); 
+}
+
+#play-again{
+    transform: translateY(-100px);
+}
+
+#final-result {
+    font-size: 42px;
+    font-weight: bold;
+    color: rgb(11, 43, 77);
+    transform: translatey(-90px);
+    background-color: white;
+}
 
