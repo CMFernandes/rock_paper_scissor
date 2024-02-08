@@ -7,7 +7,7 @@ const playerHandPara = document.getElementById("player-hand");
 const computerHandPara = document.getElementById("computer-hand")
 
 function game(){
-    const possibleHands = ["rock","paper","scissor"]
+    const possibleHands = ["rock","paper","scissors"]
    
     function getComputerChoice() {
         const indexOfPossibleHands = Math.floor(Math.random() * possibleHands.length);
@@ -21,7 +21,7 @@ function game(){
 
     const rock = document.getElementById("rock");
     const paper = document.getElementById("paper");
-    const scissor = document.getElementById("scissor");
+    const scissors = document.getElementById("scissors");
    
    
     
@@ -46,9 +46,9 @@ function game(){
         }  
     });
 
-    scissor.addEventListener("click", () => {
+    scissors.addEventListener("click", () => {
         if(roundCount < rounds){
-        const playerSelection = "scissor";
+        const playerSelection = "scissors";
         const computerChoice = getComputerChoice();
         const roundResult = playRound(playerSelection, computerChoice);
         evaluateRound(roundResult);
@@ -99,7 +99,7 @@ function game(){
 
         }else if ((playerSelection== "paper" && computerChoice == "rock")  ||
             (playerSelection== "rock" && computerChoice == "scissors") ||
-            (playerSelection == "scissor" && computerChoice == "paper")) {
+            (playerSelection == "scissors" && computerChoice == "paper")) {
             return 1;
             
         }else{
